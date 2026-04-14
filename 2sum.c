@@ -20,5 +20,41 @@ int main() {
 }
 
 void twoSum(int nums[], int nums_size, int target) {
-	/* YOUR CODE HERE */
+	int numscopy[MAX_ARRAY_SIZE] = {0};
+
+       int i =0;
+
+		while (i<nums_size){
+			numscopy[i] = nums[i];
+			i++;
+		}
+		qsort(numscopy, nums_size, sizeof(int), cmp);
+		int j = 0;
+		int k = nums_size-1;
+		while (j < k) {
+			if(numscopy[j]+numscopy[k] == target){
+				break;
+			}else if (numscopy[j]+numscopy[k] < target){
+				j++;
+			}else if (numscopy[j]+numscopy[k] > target){
+				k--;
+			}
+		}
+		int t=0;
+		while(nums[t]!= numscopy[j]){
+			t++;
+		}
+		int s=0;
+				while(nums[s]!= numscopy[k] ||  s == t ){
+
+					s++;
+				}
+				printf("(%d, %d)\n", t, s);
+}
+
+int cmp(const void* a, const void* b) {
+    int x = *(int*)a;
+    int y = *(int*)b;
+
+    return x - y;
 }
