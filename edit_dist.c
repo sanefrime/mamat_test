@@ -62,6 +62,5 @@ int edit_dist(char word1[], char word2[]) {
 	        }
 	    }
 
-	    printf("%d\n", dp[n][m]);
-	    return 0;
+	    return dp[n][m]];
 }
