@@ -5,6 +5,13 @@
 
 int edit_dist(char word1[], char word2[]);
 
+int min(int a, int b, int c) {
+    int m = a;
+    if (b < m) m = b;
+    if (c < m) m = c;
+    return m;
+}
+
 int main() {
 	char word1[MAX_WORD_LEN], word2[MAX_WORD_LEN];
 	
@@ -20,8 +27,7 @@ int main() {
 
 int edit_dist(char word1[], char word2[]) {
 
-	    scanf("%s", word1);
-	    scanf("%s", word2);
+
 
 	    int n = strlen(word1);
 	    int m = strlen(word2);
@@ -41,7 +47,7 @@ int edit_dist(char word1[], char word2[]) {
 	        for (int j = 1; j <= m; j++) {
 
 
-	            if (s1[i-1] == s2[j-1]) {
+	            if (word1[i-1] == word2[j-1]) {
 	                dp[i][j] = dp[i-1][j-1];
 	            }
 
