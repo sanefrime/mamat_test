@@ -1,8 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_ARRAY_SIZE 10000
 
 void twoSum(int nums[], int nums_size, int target);
+
+int cmp(const void* a, const void* b) {
+    int x = *(int*)a;
+    int y = *(int*)b;
+
+    return x - y;
+}
 
 int main() {
 	int target;
@@ -52,9 +60,4 @@ void twoSum(int nums[], int nums_size, int target) {
 				printf("(%d, %d)\n", t, s);
 }
 
-int cmp(const void* a, const void* b) {
-    int x = *(int*)a;
-    int y = *(int*)b;
 
-    return x - y;
-}
