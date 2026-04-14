@@ -58,6 +58,7 @@ void twoSum(int nums[], int nums_size, int target) {
 					s++;
 				}
 				printf("(%d, %d)\n", t, s);
+				int a =0;
 }
 
 
